@@ -1,43 +1,35 @@
 package no.hvl.dat100.oppgave2;
 
-import no.hvl.dat100.common.TODO;
-import no.hvl.dat100.oppgave1.*;
+import no.hvl.dat100.oppgave1.Innlegg;
 
 public class Tekst extends Innlegg {
 
-	// TODO: objektvariable 
-	
-	public Tekst () {
-		
-	}
-	
-	public Tekst(int id, String bruker, String dato, String tekst) {
-		throw new UnsupportedOperationException(TODO.constructor("Tekst"));
-	}
-	
-	public Tekst(int id, String bruker, String dato, int likes, String tekst) {
-		throw new UnsupportedOperationException(TODO.constructor("Tekst"));
-	}
-	
-	public String getTekst() {
-		throw new UnsupportedOperationException(TODO.method());
+    private String tekst;
 
-	}
+    public Tekst(int id, String bruker, String dato, String tekst) {
+        super(id, bruker, dato);
+        this.tekst = tekst;
+    }
 
-	public void setTekst(String tekst) {
-		throw new UnsupportedOperationException(TODO.method());
-	}
+    public Tekst(int id, String bruker, String dato, int likes, String tekst) {
+        super(id, bruker, dato, likes);
+        this.tekst = tekst;
+    }
 
-	@Override
-	public String toString() {
-		throw new UnsupportedOperationException(TODO.method());
+    public String getTekst() {
+        return tekst;
+    }
 
-	}
-	
-	// Metoden nedenfor er kun for valgfri oppgave 6
-	public String toHTML() {
-			
-		throw new UnsupportedOperationException(TODO.method());
-				
-	}
+    public void setTekst(String tekst) {
+        this.tekst = tekst;
+    }
+
+    public String toString() {
+        return "TEKST\n" +
+                getId() + "\n" +
+                getBruker() + "\n" +
+                getDato() + "\n" +
+                getLikes() + "\n" +
+                tekst + "\n";
+    }
 }
